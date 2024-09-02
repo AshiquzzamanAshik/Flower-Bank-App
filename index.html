@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Bank App</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-r from-green-400 to-blue-500 min-h-screen flex items-center justify-center">
+
+    <!-- Dashboard -->
+    <div class="max-w-xl mx-auto mt-10 p-6 bg-white rounded shadow-md">
+        <h1 class="text-2xl font-bold text-center mb-4">Flower Bank App</h1>
+        <div class="text-center mb-4">
+            <p class="text-xl">Current Balance: <span id="balance">$0.00</span></p>
+        </div>
+        <div class="flex justify-around mb-4">
+            <button id="add-money-btn" class="bg-green-500 text-white py-2 px-4 rounded">Add Money</button>
+            <button id="withdraw-money-btn" class="bg-red-500 text-white py-2 px-4 rounded">Withdraw Money</button>
+        </div>
+        <div class="text-center">
+            <button id="transaction-history-btn" class="bg-blue-500 text-white py-2 px-4 rounded">View Transaction History</button>
+        </div>
+    </div>
+
+    <!-- Add Money Interface -->
+    <div id="add-money-interface" class="hidden max-w-xl mx-auto mt-10 p-6 bg-white rounded shadow-md">
+        <h2 class="text-xl font-bold mb-4">Add Money</h2>
+        <input type="number" id="add-amount" class="w-full p-2 border rounded mb-4" placeholder="Enter amount">
+        <button id="confirm-add-btn" class="bg-green-500 text-white py-2 px-4 rounded">Confirm</button>
+        <button id="cancel-add-btn" class="bg-gray-500 text-white py-2 px-4 rounded mt-2">Cancel</button>
+    </div>
+
+    <!-- Withdraw Money Interface -->
+    <div id="withdraw-money-interface" class="hidden max-w-xl mx-auto mt-10 p-6 bg-white rounded shadow-md">
+        <h2 class="text-xl font-bold mb-4">Withdraw Money</h2>
+        <input type="number" id="withdraw-amount" class="w-full p-2 border rounded mb-4" placeholder="Enter amount">
+        <button id="confirm-withdraw-btn" class="bg-red-500 text-white py-2 px-4 rounded">Confirm</button>
+        <button id="cancel-withdraw-btn" class="bg-gray-500 text-white py-2 px-4 rounded mt-2">Cancel</button>
+    </div>
+
+    <!-- Transaction History Interface -->
+    <div id="transaction-history-interface" class="hidden max-w-xl mx-auto mt-10 p-6 bg-white rounded shadow-md">
+        <h2 class="text-xl font-bold mb-4">Transaction History</h2>
+        <table class="min-w-full bg-white">
+            <thead>
+                <tr>
+                    <th class="py-2">Date</th>
+                    <th class="py-2">Type</th>
+                    <th class="py-2">Amount</th>
+                    <th class="py-2">Balance After</th>
+                </tr>
+            </thead>
+            <tbody id="transaction-list">
+                <!-- Transactions will be dynamically inserted here -->
+            </tbody>
+        </table>
+        <button id="close-history-btn" class="bg-gray-500 text-white py-2 px-4 rounded mt-4">Close</button>
+    </div>
+
+    <script src="Ars.js"></script>
+</body>
+</html>
